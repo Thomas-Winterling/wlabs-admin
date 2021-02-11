@@ -1,7 +1,12 @@
-import React from 'react'
+import React , { useRef } from 'react'
 import { Form, Button, Card } from 'react-bootstrap'
 
 function Signup() {
+    const emailRef = useRef()
+    const passwordRef = useRef()
+    const passwordConfirmRef = useRef()
+
+
     return (
         <>
             <Card>
@@ -9,16 +14,16 @@ function Signup() {
                     <h2 className="text-center mb-4">Sign Up</h2>
                     <Form>
                         <Form.Group>
-                            <From.Label>Email</From.Label>
-                            <From.Control type="email" ref={emailRef} required />
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control type="email" ref={emailRef} required />
                         </Form.Group>
                         <Form.Group>
-                            <From.Label>Email</From.Label>
-                            <From.Control type="password" ref={passwordRef} required />
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control type="password" ref={passwordRef} required />
                         </Form.Group>
                         <Form.Group>
-                            <From.Label>Email</From.Label>
-                            <From.Control type="password" ref={passwardConfirmRef} required />
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control type="password" ref={passwordConfirmRef} required />
                         </Form.Group>
                         <Button className="w-100" type="submit">Sign up</Button>
                     </Form>
