@@ -18,9 +18,9 @@ export default function ForgotPassword() {
       setError("")
       setLoading(true)
       await resetPassword(emailRef.current.value)
-      setMessage("Check your inbox for further instructions")
+      setMessage("Überprüfen Sie Ihren Posteingang für weitere Anweisungen.")
     } catch {
-      setError("Failed to reset password")
+      setError("Zurücksetzen des Passwords fehlgeschlagen.")
     }
 
     setLoading(false)
@@ -30,7 +30,7 @@ export default function ForgotPassword() {
     <>
       <Card>
         <Card.Body>
-          <h2 className="text-center mb-4">Password Reset</h2>
+          <h2 className="text-center mb-4">Password vergessen ?</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           {message && <Alert variant="success">{message}</Alert>}
           <Form onSubmit={handleSubmit}>
@@ -39,7 +39,7 @@ export default function ForgotPassword() {
               <Form.Control type="email" ref={emailRef} required />
             </Form.Group>
             <Button disabled={loading} className="w-100" type="submit">
-              Reset Password
+              Password zurücksetzen
             </Button>
           </Form>
           <div className="w-100 text-center mt-3">
@@ -48,7 +48,7 @@ export default function ForgotPassword() {
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/signup">Sign Up</Link>
+        Brauchst du einen Account ? <Link to="/signup">Anmelden</Link>
       </div>
     </>
   )

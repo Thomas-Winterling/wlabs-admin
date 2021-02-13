@@ -31,6 +31,7 @@ export default function UpdateProfile() {
 
     Promise.all(promises)
       .then(() => {
+        // https://lernen.react-js.dev/ecosystem/routing
         history.push("/")
       })
       .catch(() => {
@@ -45,7 +46,7 @@ export default function UpdateProfile() {
     <>
       <Card>
         <Card.Body>
-          <h2 className="text-center mb-4">Update Profile</h2>
+          <h2 className="text-center mb-4">Benutzerprofil updaten</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
@@ -58,7 +59,7 @@ export default function UpdateProfile() {
               />
             </Form.Group>
             <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Passwort</Form.Label>
               <Form.Control
                 type="password"
                 ref={passwordRef}
@@ -66,7 +67,7 @@ export default function UpdateProfile() {
               />
             </Form.Group>
             <Form.Group id="password-confirm">
-              <Form.Label>Password Confirmation</Form.Label>
+              <Form.Label>Password bestätigen</Form.Label>
               <Form.Control
                 type="password"
                 ref={passwordConfirmRef}
@@ -74,13 +75,13 @@ export default function UpdateProfile() {
               />
             </Form.Group>
             <Button disabled={loading} className="w-100" type="submit">
-              Update
+              Benutzerprofel updaten
             </Button>
           </Form>
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        <Link to="/">Cancel</Link>
+        <Link to="/">Abbrechen</Link>
       </div>
     </>
   )

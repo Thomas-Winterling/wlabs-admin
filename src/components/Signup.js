@@ -16,7 +16,7 @@ export default function Signup() {
     e.preventDefault()
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      return setError("Passwords do not match")
+      return setError("Das Passwort stimmt leider nicht.")
     }
 
     try {
@@ -25,7 +25,7 @@ export default function Signup() {
       await signup(emailRef.current.value, passwordRef.current.value)
       history.push("/")
     } catch {
-      setError("Failed to create an account")
+      setError("Account erstellen fehlgeschlagen.")
     }
 
     setLoading(false)
@@ -35,7 +35,7 @@ export default function Signup() {
     <>
       <Card>
         <Card.Body>
-          <h2 className="text-center mb-4">Sign Up</h2>
+          <h2 className="text-center mb-4">Anmelden</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
@@ -47,17 +47,17 @@ export default function Signup() {
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
             <Form.Group id="password-confirm">
-              <Form.Label>Password Confirmation</Form.Label>
+              <Form.Label>Password bestätigen</Form.Label>
               <Form.Control type="password" ref={passwordConfirmRef} required />
             </Form.Group>
             <Button disabled={loading} className="w-100" type="submit">
-              Sign Up
+              Anmelden
             </Button>
           </Form>
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        Already have an account? <Link to="/login">Log In</Link>
+        Hast du schon einen Account? <Link to="/login">Log In</Link>
       </div>
     </>
   )
