@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import { Card, Button, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+import Header from './Header'
+import Sidebar from './Sidebar'
 
 export default function Dashboard() {
   const [error, setError] = useState("")
@@ -20,7 +22,9 @@ export default function Dashboard() {
   }
 
   return (
-    <>
+    <div className="dashboard">
+      <Header />
+      <Sidebar />
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Profile</h2>
@@ -33,9 +37,9 @@ export default function Dashboard() {
       </Card>
       <div className="w-100 text-center mt-2">
         <Button variant="link" onClick={handleLogout}>
-          Log Out
+          Ausloggen
         </Button>
       </div>
-    </>
+    </div>
   )
 }
