@@ -28,7 +28,8 @@ export default function Login() {
 
   return (
     <>
-      <Card>
+      <Card className="d-flex align-items-center justify-content-center"
+            style={{ minHeight: "100vh" }}>
         <Card.Body>
           <h2 className="text-center mb-4">Log In</h2>
           {error && <Alert variant="danger">{error}</Alert>}
@@ -48,11 +49,11 @@ export default function Login() {
           <div className="w-100 text-center mt-3">
             <Link to="/forgot-password">Password vergessen ?</Link>
           </div>
+          <div className="w-100 text-center mt-2">
+            Brauchst du einen Account ? <Link to="/signup">Anmelden</Link>
+          </div>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
-        Brauchst du einen Account ? <Link to="/signup">Anmelden</Link>
-      </div>
     </>
   )
 }

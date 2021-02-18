@@ -4,6 +4,7 @@ import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 import Header from './Header'
 import Sidebar from './Sidebar'
+import Termin from './sidebar/Termin'
 
 export default function Dashboard() {
   const [error, setError] = useState("")
@@ -25,6 +26,17 @@ export default function Dashboard() {
     <div className="dashboard">
       <Header />
       <Sidebar />
+      
+      {/* https://react.semantic-ui.com/modules/modal/ */}
+      {/* https://react-bootstrap.github.io/components/modal/ */}
+      {/* https://react-bootstrap.github.io/components/table/ */}
+      {/* https://material-ui.com/components/tables/ */}
+      {/* To do list einbinden*/}
+      {/* To do list form anpassen */}
+      {/* buttons inst die liste */}
+      {/* https://material-ui.com/components/material-icons/ */}
+      
+      
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Profile</h2>

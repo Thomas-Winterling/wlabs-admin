@@ -33,7 +33,8 @@ export default function Signup() {
 
   return (
     <>
-      <Card>
+      <Card className="d-flex align-items-center justify-content-center"
+            style={{ minHeight: "100vh" }}>
         <Card.Body>
           <h2 className="text-center mb-4">Anmelden</h2>
           {error && <Alert variant="danger">{error}</Alert>}
@@ -54,11 +55,11 @@ export default function Signup() {
               Anmelden
             </Button>
           </Form>
+          <div className="w-100 text-center mt-2">
+              Hast du schon einen Account? <Link to="/login">Log In</Link>
+          </div>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
-        Hast du schon einen Account? <Link to="/login">Log In</Link>
-      </div>
     </>
   )
 }
