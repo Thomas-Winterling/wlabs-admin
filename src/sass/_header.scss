@@ -1,6 +1,47 @@
 header {
     .navigation {
         display: flex;
-        background: gray
+        background: #FFFFFF;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
+        height: 5vh;
+
+        .logo {
+            width: 10%;
+            background-color: #252B3B;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h2 {
+                background: orange;
+            }
+        }
+
+        .sidebar-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5%;
+        }
+
+        .menu {
+            width: 40%;
+            .navbar-dark .navbar-nav .nav-link {
+                color: black;
+            }
+        }
+        .icons {
+            width: 30%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .user {
+            width: 15%;
+            display: flex;    
+            justify-content: flex-end;
+            align-items: center;    
+        }
     }
 }

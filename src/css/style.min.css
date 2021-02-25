@@ -1,12 +1,95 @@
+.MuiIconButton-label {
+  color: black;
+}
+
+.dashboard {
+  background: #F1F5F7;
+}
+.dashboard .content-container {
+  width: 100vw;
+  height: 95vh;
+  display: flex;
+}
+.dashboard .content-container .content-left {
+  width: 10vw;
+  height: 95vh;
+}
+.dashboard .content-container .content-right {
+  width: 90vw;
+  height: 95vh;
+}
+
+.MuiPaper-root {
+  top: 60px !important;
+  left: 2225px;
+  min-width: 200px !important;
+}
+
+.fade .popover {
+  min-width: 190px;
+  min-height: 200px;
+  left: -15px;
+}
+.fade .popover .popover-header {
+  display: flex;
+  justify-content: space-between;
+}
+.fade .popover span {
+  display: none;
+}
+
 header .navigation {
   display: flex;
-  background: gray;
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  height: 5vh;
+}
+header .navigation .logo {
+  width: 10%;
+  background-color: #252B3B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .navigation .logo h2 {
+  background: orange;
+}
+header .navigation .sidebar-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5%;
+}
+header .navigation .menu {
+  width: 40%;
+}
+header .navigation .menu .navbar-dark .navbar-nav .nav-link {
+  color: black;
+}
+header .navigation .icons {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+header .navigation .user {
+  width: 15%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .sidebar {
-  background-color: gray;
-  height: 100vh;
-  width: 10%;
+  background-color: #252B3B;
+  height: 95vh;
+}
+.sidebar .sidebar-menu {
+  display: flex;
+  flex-direction: column !important;
+}
+
+.todo__list {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.min.css.map */

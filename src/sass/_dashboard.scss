@@ -1,0 +1,19 @@
+.dashboard {
+    background: #F1F5F7;
+
+    .content-container {
+        width: 100vw;
+        height: 95vh;
+        display: flex;
+
+        .content-left {
+            width: 10vw;
+            height: 95vh;
+        }
+
+        .content-right {
+            width: 90vw;
+            height: 95vh;
+        }
+    }
+}

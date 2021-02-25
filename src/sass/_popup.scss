@@ -1,0 +1,22 @@
+.MuiPaper-root{
+    top: 60px !important;
+    left: 2225px;
+    min-width: 200px !important;
+}
+
+.fade {
+    .popover {
+        min-width: 190px;
+        min-height: 200px;
+        left: -15px;
+        
+        .popover-header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        span {
+            display: none;
+        }
+    }
+}
