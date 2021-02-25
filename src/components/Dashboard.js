@@ -1,10 +1,17 @@
-import React, { useState } from "react"
-import { Card, Button, Alert } from "react-bootstrap"
+import React, { useState, useEffect } from "react"
+import { Card, Alert } from "react-bootstrap"
+import { Button, FormControl, Input, InputLabel } from '@material-ui/core'
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 import Header from './Header'
 import Sidebar from './Sidebar'
 import Termin from './sidebar/Termin'
+import Todo from './Todo'
+import Todos from './Todos'
+import db from '../firebase';
+import firebase from 'firebase'
+import BeatLoader from "react-spinners/BeatLoader"
+import { css } from "@emotion/core";
 
 export default function Dashboard() {
   const [error, setError] = useState("")
@@ -22,36 +29,112 @@ export default function Dashboard() {
     }
   }
 
+
+
+
+
+
+
+
+
+
+  const [todos, setTodos] = useState([])
+  const [input, setInput] = useState('')
+
+  // when the app loads we need to listen to the database and fetch new todos as they get added/removed
+  useEffect(() =>{
+    // this code here.... fires when the app.js loads
+    db.db.collection('todos').orderBy('timestamp','desc').onSnapshot(snapshot => {
+       // console.log(snapshot.docs.map((doc) => doc.data().todo))
+      setTodos(snapshot.docs.map((doc) => ({
+        id: doc.id ,
+        todo: doc.data().todo})))
+    })
+  }, [])
+
+
+  const addTodo = (event) => {
+    // This will fire off when we click the button
+    event.preventDefault() // will stop the refresh
+    
+    // Post to database
+    db.db.collection('todos').add({
+      todo: input,  // + input
+      timestamp:  firebase.firestore.FieldValue.serverTimestamp(),
+    })
+
+    // todos.push()
+    setTodos([...todos, input])
+    setInput('') // clear uo the input after hitting submit
+  }
+
+  const [loading, setLoading] = useState(false);
+  const [content, setContent] = useState('none');
+
+  const override = css`
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0 auto;
+  border-color: red;
+`;
+
+  useEffect(()=>{
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+      setContent('block')
+    }, 3000)
+  },[])
+
   return (
-    <div className="dashboard">
-      <Header />
-      <Sidebar />
-      
-      {/* https://react.semantic-ui.com/modules/modal/ */}
-      {/* https://react-bootstrap.github.io/components/modal/ */}
-      {/* https://react-bootstrap.github.io/components/table/ */}
-      {/* https://material-ui.com/components/tables/ */}
-      {/* To do list einbinden*/}
-      {/* To do list form anpassen */}
-      {/* buttons inst die liste */}
-      {/* https://material-ui.com/components/material-icons/ */}
-      
-      
-      <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">Profile</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
-          <strong>Email:</strong> {currentUser.email}
-          <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
-            Update Profile
-          </Link>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        <Button variant="link" onClick={handleLogout}>
-          Ausloggen
-        </Button>
+    <>
+    
+      <div className="dashboard">
+      <div className="top-container">
+        <Header />
+      </div>
+      <div className="content-container">
+      <div className="content-left">
+        <Sidebar />
+      </div>
+        <div className="content-right">
+          {
+            loading ?
+
+            <BeatLoader
+              color="orange"
+              loading={loading}
+              css={override}
+              size={30} 
+            />
+
+            :
+
+            <div style={{display: content}}>
+            <h1>Hello Clever Programmers !</h1>
+            <form>
+              <FormControl>
+                <InputLabel>Write a Todo</InputLabel>
+                <Input value={input} onChange={event => setInput(event.target.value)} />
+              </FormControl>
+              <Button disabled={!input} variant="contained" color="primary" type="submit" onClick={addTodo}>
+                Add Todo
+              </Button>
+            </form>
+            <ul>
+              {todos.map((todo) => (
+                <Todo id={todo} todo={todo} />
+              ))} 
+            </ul>
+            <Todos />
+            </div>
+          }
       </div>
     </div>
+  </div>
+    
+  </>
   )
 }
