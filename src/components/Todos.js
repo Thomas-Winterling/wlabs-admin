@@ -4,7 +4,7 @@ import { useAuth } from "../contexts/AuthContext"
 import DeleteButton from './buttons/DeleteButton'
 import UpdateButton from './buttons/UpdateButton'
 
-export default function BasicTable() {
+export default function Todos() {
     const { currentUser } = useAuth()
     console.log(currentUser)
     // letze anmeldung currentUser.metadata.lastSignInTime
