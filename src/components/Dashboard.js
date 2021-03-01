@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Card, Alert } from "react-bootstrap"
 import { Button, FormControl, Input, InputLabel } from '@material-ui/core'
+import AddIcon from '@material-ui/icons/Add';
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 import Header from './Header'
@@ -12,6 +13,8 @@ import db from '../firebase';
 import firebase from 'firebase'
 import BeatLoader from "react-spinners/BeatLoader"
 import { css } from "@emotion/core";
+import Customers from './Customers'
+import Chart from './statistics/Chart'
 
 export default function Dashboard() {
   const [error, setError] = useState("")
@@ -28,7 +31,6 @@ export default function Dashboard() {
       setError("Failed to log out")
     }
   }
-
 
 
 
@@ -68,6 +70,7 @@ export default function Dashboard() {
     setInput('') // clear uo the input after hitting submit
   }
 
+
   const [loading, setLoading] = useState(false);
   const [content, setContent] = useState('none');
 
@@ -84,13 +87,12 @@ export default function Dashboard() {
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
-      setContent('block')
+      setContent('flex')
     }, 3000)
   },[])
 
   return (
     <>
-    
       <div className="dashboard">
       <div className="top-container">
         <Header />
@@ -112,29 +114,40 @@ export default function Dashboard() {
 
             :
 
-            <div style={{display: content}}>
-            <h1>Hello Clever Programmers !</h1>
-            <form>
-              <FormControl>
-                <InputLabel>Write a Todo</InputLabel>
-                <Input value={input} onChange={event => setInput(event.target.value)} />
-              </FormControl>
-              <Button disabled={!input} variant="contained" color="primary" type="submit" onClick={addTodo}>
-                Add Todo
-              </Button>
-            </form>
-            <ul>
-              {todos.map((todo) => (
-                <Todo id={todo} todo={todo} />
-              ))} 
-            </ul>
-            <Todos />
+            <div style={{display: content, flexDirection: "column" }}>
+              <div className="headline">
+                <h4>Dashboard</h4>
+              </div>
+              <div className="todos">
+                <div className="todos-header">
+                  <Button variant="contained" color="primary" type="submit" onClick={addTodo}>
+                   <AddIcon />Neuer Eintrag
+                  </Button>
+                </div>
+                <div className="todos-content">
+                  <Customers />
+                </div>
+              </div>
+
+              <div className="statistics">
+                <div className="wl-statistic">
+                  <h4>Kundenwachstum</h4>
+                  <Chart />
+                </div>
+                <div className="wl-statistic">
+                  <h4>Loginaktivität</h4>
+                  <Chart />
+                </div>
+                <div className="wl-statistic">
+                  <h4>Übersicht der letzten Woche</h4>
+                  <Chart />
+                </div>
+              </div>
             </div>
           }
       </div>
     </div>
-  </div>
-    
+  </div>  
   </>
   )
 }
