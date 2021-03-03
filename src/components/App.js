@@ -8,6 +8,12 @@ import Login from "./Login"
 import PrivateRoute from "./PrivateRoute"
 import ForgotPassword from "./ForgotPassword"
 import UpdateProfile from "./UpdateProfile"
+import TerminPlaner from "./pages/TerminPlaner"
+import Calendar from "./pages/Calendar"
+import Chat from './pages/Chat'
+import Accounts from './pages/Accounts'
+import Emails from './pages/Emails'
+import Projects from './pages/Projects'
 
 function App() {
   return (
@@ -20,6 +26,12 @@ function App() {
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
             <Route path="/forgot-password" component={ForgotPassword} />
+            <PrivateRoute path="/terminplaner" component={TerminPlaner} />
+            <PrivateRoute path="/chat" component={Chat} />
+            <PrivateRoute path="/calendar" component={Calendar} />
+            <PrivateRoute path="/accounts" component={Accounts} />
+            <PrivateRoute path="/emails" component={Emails} />
+            <PrivateRoute path="/projects" component={Projects} />
           </Switch>
         </AuthProvider>
       </Router>

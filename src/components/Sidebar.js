@@ -12,12 +12,12 @@ function Sidebar() {
                 <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
                 <ReactBootStrap.Nav className="mr-auto sidebar-menu"> 
                     <ReactBootStrap.Nav.Link href="/">Dashboard</ReactBootStrap.Nav.Link>
-                    <ReactBootStrap.Nav.Link href="#aboutme">Kalender</ReactBootStrap.Nav.Link>
-                    <ReactBootStrap.Nav.Link href="#projects">Chat</ReactBootStrap.Nav.Link>
-                    <ReactBootStrap.Nav.Link href="#skills">Emails</ReactBootStrap.Nav.Link>
-                    <ReactBootStrap.Nav.Link href="#contact">Accounts</ReactBootStrap.Nav.Link>
-                    <ReactBootStrap.Nav.Link href="#contact">Projekte</ReactBootStrap.Nav.Link>
-                    <ReactBootStrap.Nav.Link href="#contact">Terminplaner</ReactBootStrap.Nav.Link>
+                    <ReactBootStrap.Nav.Link href="/calendar">Kalender</ReactBootStrap.Nav.Link>
+                    <ReactBootStrap.Nav.Link href="/chat">Chat</ReactBootStrap.Nav.Link>
+                    <ReactBootStrap.Nav.Link href="/emails">Emails</ReactBootStrap.Nav.Link>
+                    <ReactBootStrap.Nav.Link href="/accounts">Accounts</ReactBootStrap.Nav.Link>
+                    <ReactBootStrap.Nav.Link href="/projects">Projekte</ReactBootStrap.Nav.Link>
+                    <ReactBootStrap.Nav.Link href="/terminplaner">Terminplaner</ReactBootStrap.Nav.Link>
                 </ReactBootStrap.Nav>
                 </ReactBootStrap.Navbar.Collapse>
                 </ReactBootStrap.Navbar>
