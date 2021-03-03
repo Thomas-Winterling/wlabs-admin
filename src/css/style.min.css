@@ -12,7 +12,7 @@
 }
 .dashboard .content-container {
   width: 100vw;
-  height: 95vh;
+  min-height: 95vh;
   display: flex;
 }
 .dashboard .content-container .content-left {
@@ -86,7 +86,7 @@ header .navigation .user {
 
 .sidebar {
   background-color: #252B3B;
-  height: 95vh;
+  min-height: 95vh;
 }
 .sidebar .sidebar-menu {
   display: flex;

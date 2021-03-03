@@ -1,12 +1,10 @@
 import React, { useState } from "react"
 import Table from 'react-bootstrap/Table';
 import { useAuth } from "../contexts/AuthContext"
-import DeleteButton from './buttons/DeleteButton'
-import UpdateButton from './buttons/UpdateButton'
+
 
 export default function Todos() {
     const { currentUser } = useAuth()
-    console.log(currentUser)
     // letze anmeldung currentUser.metadata.lastSignInTime
     // registriert currentUser.metadata.creationTime
     // Email currentUser.email
@@ -38,8 +36,7 @@ export default function Todos() {
       <td>registeriert</td>
       <td>letzte Anmeldung</td>
       <td>
-          <DeleteButton />
-          <UpdateButton />
+          
       </td>
     </tr>
     <tr>
@@ -51,8 +48,7 @@ export default function Todos() {
       <td>registeriert</td>
       <td>letzte Anmeldung</td>
       <td>
-          <DeleteButton />
-          <UpdateButton />
+          
       </td>
     </tr>
     <tr>
@@ -64,8 +60,7 @@ export default function Todos() {
       <td>registeriert</td>
       <td>letzte Anmeldung</td>
       <td>
-          <DeleteButton />
-          <UpdateButton />
+          
       </td>
     </tr>
     <tr>
@@ -77,8 +72,7 @@ export default function Todos() {
       <td>registeriert</td>
       <td>letzte Anmeldung</td>
       <td>
-          <DeleteButton />
-          <UpdateButton />
+          
       </td>
     </tr>
     <tr>
@@ -90,8 +84,7 @@ export default function Todos() {
       <td>registeriert</td>
       <td>letzte Anmeldung</td>
       <td>
-          <DeleteButton />
-          <UpdateButton />
+          
       </td>
     </tr>
   </tbody>
