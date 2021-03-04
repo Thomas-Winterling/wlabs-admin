@@ -24,6 +24,108 @@
   height: 95vh;
 }
 
+.accounts {
+  background: #F1F5F7;
+}
+.accounts .content-container {
+  width: 100vw;
+  min-height: 95vh;
+  display: flex;
+}
+.accounts .content-container .content-left {
+  width: 10vw;
+  height: 95vh;
+}
+.accounts .content-container .content-right {
+  width: 90vw;
+  height: 95vh;
+}
+
+.calendar {
+  background: #F1F5F7;
+}
+.calendar .content-container {
+  width: 100vw;
+  min-height: 95vh;
+  display: flex;
+}
+.calendar .content-container .content-left {
+  width: 10vw;
+  height: 95vh;
+}
+.calendar .content-container .content-right {
+  width: 90vw;
+  height: 95vh;
+}
+
+.chat {
+  background: #F1F5F7;
+}
+.chat .content-container {
+  width: 100vw;
+  min-height: 95vh;
+  display: flex;
+}
+.chat .content-container .content-left {
+  width: 10vw;
+  height: 95vh;
+}
+.chat .content-container .content-right {
+  width: 90vw;
+  height: 95vh;
+}
+
+.emails {
+  background: #F1F5F7;
+}
+.emails .content-container {
+  width: 100vw;
+  min-height: 95vh;
+  display: flex;
+}
+.emails .content-container .content-left {
+  width: 10vw;
+  height: 95vh;
+}
+.emails .content-container .content-right {
+  width: 90vw;
+  height: 95vh;
+}
+
+.projects {
+  background: #F1F5F7;
+}
+.projects .content-container {
+  width: 100vw;
+  min-height: 95vh;
+  display: flex;
+}
+.projects .content-container .content-left {
+  width: 10vw;
+  height: 95vh;
+}
+.projects .content-container .content-right {
+  width: 90vw;
+  height: 95vh;
+}
+
+.terminplaner {
+  background: #F1F5F7;
+}
+.terminplaner .content-container {
+  width: 100vw;
+  min-height: 95vh;
+  display: flex;
+}
+.terminplaner .content-container .content-left {
+  width: 10vw;
+  height: 95vh;
+}
+.terminplaner .content-container .content-right {
+  width: 90vw;
+  height: 95vh;
+}
+
 .MuiPaper-root {
   top: 60px !important;
   left: 2225px;
